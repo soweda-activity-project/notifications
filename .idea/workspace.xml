@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e11a6860-8583-4aee-9aab-6fad9915f847" name="Default" comment="" />
+    <list default="true" id="e11a6860-8583-4aee-9aab-6fad9915f847" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/notifications/app/Domain.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/notifications.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/notifications.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,18 +15,68 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/notifications/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notifications/.env">
-          <provider selected="true" editor-type-id="text-editor" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding>
+                <element signature="e#23#63#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/notifications/.gitignore">
+      <file leaf-file-name="Domain.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="426">
+              <caret line="207" column="67" selection-start-line="207" selection-start-column="67" selection-end-line="207" selection-end-column="67" />
+              <folding>
+                <element signature="n#EmailAddress#0;n#!!top" />
+                <element signature="n#EmailAddress#1;n#!!top" />
+                <element signature="n#ContactInfo#0;n#!!top" />
+                <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
+                <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
+                <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
+                <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
+                <element signature="n#InternalNotification#0;n#!!top" />
+                <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
+                <element signature="n#ExternalNotification#0;n#!!top" />
+                <element signature="n#NotificationChannel#0;n#!!top" />
+                <element signature="n#Subscription#0;n#!!top" />
+                <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
+                <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
+                <element signature="n#NotificationResult#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubscriptionWorkflow.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotifyWorkflow.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -34,6 +90,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/notifications/.gitignore" />
+        <option value="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" />
+        <option value="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" />
+        <option value="$PROJECT_DIR$/notifications/app/Domain.php" />
       </list>
     </option>
   </component>
@@ -43,9 +102,83 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-29" />
-    <option name="y" value="152" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/notifications/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/notifications/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/notifications/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/notifications/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/notifications/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/notifications/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/notifications/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/notifications/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/notifications/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/notifications/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/notifications/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/notifications/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/notifications/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/notifications/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/notifications/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/notifications/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/notifications/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/notifications/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/notifications/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/notifications/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/notifications/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/notifications/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/notifications/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/notifications/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/notifications/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/notifications/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/notifications/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/notifications/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/notifications/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/notifications/vendor/composer" />
+      <path value="$PROJECT_DIR$/notifications/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/notifications/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/notifications/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/notifications/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/notifications/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/notifications/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/notifications/vendor/psr/simple-cache" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
     <option name="width" value="1858" />
     <option name="height" value="1038" />
   </component>
@@ -65,6 +198,12 @@
               <item name="notifications" type="b2602c69:ProjectViewProjectNode" />
               <item name="notifications" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="notifications" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="notifications" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notifications" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="notifications" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -100,34 +239,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523275542403</updated>
-      <workItem from="1523275543657" duration="454000" />
+      <workItem from="1523275543657" duration="5049000" />
+      <workItem from="1523280634705" duration="7247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="454000" />
+    <option name="totallyTimeSpent" value="12296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25771812" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32909605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16525424" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -139,13 +279,116 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/notifications/.env">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/notifications/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="n#EmailAddress#0;n#!!top" />
+            <element signature="n#EmailAddress#1;n#!!top" />
+            <element signature="n#ContactInfo#0;n#!!top" />
+            <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
+            <element signature="n#InternalNotification#0;n#!!top" />
+            <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#ExternalNotification#0;n#!!top" />
+            <element signature="n#NotificationChannel#0;n#!!top" />
+            <element signature="n#Subscription#0;n#!!top" />
+            <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
+            <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
+            <element signature="n#NotificationResult#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notifications/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/filter/filter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="207" column="67" selection-start-line="207" selection-start-column="67" selection-end-line="207" selection-end-column="67" />
+          <folding>
+            <element signature="n#EmailAddress#0;n#!!top" />
+            <element signature="n#EmailAddress#1;n#!!top" />
+            <element signature="n#ContactInfo#0;n#!!top" />
+            <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
+            <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
+            <element signature="n#InternalNotification#0;n#!!top" />
+            <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
+            <element signature="n#ExternalNotification#0;n#!!top" />
+            <element signature="n#NotificationChannel#0;n#!!top" />
+            <element signature="n#Subscription#0;n#!!top" />
+            <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
+            <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
+            <element signature="n#NotificationResult#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
