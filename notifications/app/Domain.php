@@ -202,7 +202,7 @@ $notification1 = new InternalNotification(1, "Activity Request Initiated","email
 $notification2 = new ExternalNotification(2, "Activity Aknowledgement Confirmed","email Temp", "sms Temp", "message 2 Content" );
 $notificationChanelType = NotificationChannel::EMAIL;
 $subscription = new Subscription(1, 2, $notificationChanelType, ["felicien.fotiomanfo@gmail.com", "pat.fotiomanfo@gmail.com"]);
-$notificationResult = new NotificationResult();
+$notificationResult = new NotificationSentResult();
 
 
 if (filter_var($emailAddress->emailAddress(), FILTER_VALIDATE_EMAIL)) {
