@@ -30,6 +30,7 @@
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/php-amqplib/php-amqplib" />
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/notifications/vendor/phpdocumentor/type-resolver" />

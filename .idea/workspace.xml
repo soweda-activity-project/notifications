@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e11a6860-8583-4aee-9aab-6fad9915f847" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/notifications/InitiatedApplicationsEventListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/RegisteredUsersEventListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/app/CreateNotificationWorkflow.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/app/DTOs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/notifications.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/notifications.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notifications/app/Domain.php" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/app/Domain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,8 +22,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/notifications/composer.json</pharConfigPath>
+    <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -30,32 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Domain.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Domain.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+            <state relative-caret-position="1428">
+              <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
               <folding>
+                <element signature="n#User#0;n#!!top" />
+                <element signature="n#__construct#0;n#User#0;n#!!top" />
+                <element signature="n#getUserId#0;n#User#0;n#!!top" />
+                <element signature="n#getContactInfo#0;n#User#0;n#!!top" />
                 <element signature="n#EmailAddress#0;n#!!top" />
-                <element signature="n#EmailAddress#1;n#!!top" />
                 <element signature="n#ContactInfo#0;n#!!top" />
                 <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
-                <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
-                <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
-                <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
-                <element signature="n#InternalNotification#0;n#!!top" />
-                <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
-                <element signature="n#ExternalNotification#0;n#!!top" />
+                <element signature="n#getPushTemplate#0;n#Notification#0;n#!!top" />
+                <element signature="n#getNotificationType#0;n#Notification#0;n#!!top" />
                 <element signature="n#NotificationChannel#0;n#!!top" />
-                <element signature="n#Subscription#0;n#!!top" />
                 <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
-                <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
-                <element signature="n#NotificationResult#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -65,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/notifications/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -73,8 +74,44 @@
       <file leaf-file-name="SubscriptionWorkflow.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="17" column="21" selection-start-line="11" selection-end-line="20" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateNotificationWorkflow.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/app/CreateNotificationWorkflow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitiatedApplicationsEventListener.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/InitiatedApplicationsEventListener.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisteredUsersEventListener.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notifications/RegisteredUsersEventListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notifications/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -82,8 +119,8 @@
       <file leaf-file-name="NotifyWorkflow.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+            <state relative-caret-position="238">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -96,10 +133,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" />
-        <option value="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" />
         <option value="$PROJECT_DIR$/notifications/.gitignore" />
         <option value="$PROJECT_DIR$/notifications/app/Domain.php" />
+        <option value="$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php" />
+        <option value="$PROJECT_DIR$/notifications/app/NotifyWorkflow.php" />
+        <option value="$PROJECT_DIR$/notifications/app/CreateNotificationWorkflow.php" />
+        <option value="$PROJECT_DIR$/notifications/EventListener.php" />
+        <option value="$PROJECT_DIR$/notifications/RegisteredUsersEventListener.php" />
       </list>
     </option>
   </component>
@@ -182,12 +222,13 @@
       <path value="$PROJECT_DIR$/notifications/vendor/psr/log" />
       <path value="$PROJECT_DIR$/notifications/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/notifications/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/notifications/vendor/php-amqplib/php-amqplib" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="1858" />
-    <option name="height" value="1038" />
+    <option name="x" value="-7" />
+    <option name="width" value="1488" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -228,8 +269,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/activity-project-management/activity-project-management" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\felic\Documents\apps-code\business\soweda\notifications\notifications" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -254,33 +301,33 @@
       <option name="presentableId" value="Default" />
       <updated>1523275542403</updated>
       <workItem from="1523275543657" duration="5049000" />
-      <workItem from="1523280634705" duration="9482000" />
+      <workItem from="1523280634705" duration="17008000" />
+      <workItem from="1523355821736" duration="1000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14531000" />
+    <option name="totallyTimeSpent" value="23057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16525424" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.45056498" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -292,7 +339,84 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/notifications/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
+          <folding>
+            <element signature="n#User#0;n#!!top" />
+            <element signature="n#__construct#0;n#User#0;n#!!top" />
+            <element signature="n#getUserId#0;n#User#0;n#!!top" />
+            <element signature="n#getContactInfo#0;n#User#0;n#!!top" />
+            <element signature="n#EmailAddress#0;n#!!top" />
+            <element signature="n#ContactInfo#0;n#!!top" />
+            <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
+            <element signature="n#getPushTemplate#0;n#Notification#0;n#!!top" />
+            <element signature="n#getNotificationType#0;n#Notification#0;n#!!top" />
+            <element signature="n#NotificationChannel#0;n#!!top" />
+            <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="21" selection-start-line="11" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/CreateNotificationWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/InitiatedApplicationsEventListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/notifications/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -308,26 +432,17 @@
         <state relative-caret-position="1394">
           <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
           <folding>
+            <element signature="n#User#0;n#!!top" />
+            <element signature="n#__construct#0;n#User#0;n#!!top" />
+            <element signature="n#getUserId#0;n#User#0;n#!!top" />
+            <element signature="n#getContactInfo#0;n#User#0;n#!!top" />
             <element signature="n#EmailAddress#0;n#!!top" />
-            <element signature="n#EmailAddress#1;n#!!top" />
             <element signature="n#ContactInfo#0;n#!!top" />
             <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
-            <element signature="n#InternalNotification#0;n#!!top" />
-            <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#ExternalNotification#0;n#!!top" />
+            <element signature="n#getPushTemplate#0;n#Notification#0;n#!!top" />
+            <element signature="n#getNotificationType#0;n#Notification#0;n#!!top" />
             <element signature="n#NotificationChannel#0;n#!!top" />
-            <element signature="n#Subscription#0;n#!!top" />
             <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
-            <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
-            <element signature="n#NotificationResult#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -356,59 +471,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notifications/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notifications/artisan">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notifications/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notifications/app/Domain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
+        <state relative-caret-position="1428">
+          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
           <folding>
+            <element signature="n#User#0;n#!!top" />
+            <element signature="n#__construct#0;n#User#0;n#!!top" />
+            <element signature="n#getUserId#0;n#User#0;n#!!top" />
+            <element signature="n#getContactInfo#0;n#User#0;n#!!top" />
             <element signature="n#EmailAddress#0;n#!!top" />
-            <element signature="n#EmailAddress#1;n#!!top" />
             <element signature="n#ContactInfo#0;n#!!top" />
             <element signature="n#__construct#0;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#0;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#1;n#ContactInfo#0;n#!!top" />
-            <element signature="n#userdId#2;n#ContactInfo#0;n#!!top" />
-            <element signature="n#InternalNotification#0;n#!!top" />
-            <element signature="n#__construct#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getNotificationId#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getNotificationName#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getEmailTemplate#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getSmsTemplate#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#getMesageContent#0;n#InternalNotification#0;n#!!top" />
-            <element signature="n#ExternalNotification#0;n#!!top" />
+            <element signature="n#getPushTemplate#0;n#Notification#0;n#!!top" />
+            <element signature="n#getNotificationType#0;n#Notification#0;n#!!top" />
             <element signature="n#NotificationChannel#0;n#!!top" />
-            <element signature="n#Subscription#0;n#!!top" />
             <element signature="n#getNotificationChannel#0;n#Subscription#0;n#!!top" />
-            <element signature="n#getContactList#0;n#Subscription#0;n#!!top" />
-            <element signature="n#NotificationResult#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/SubscriptionWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="21" selection-start-line="11" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/NotifyWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/app/CreateNotificationWorkflow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/InitiatedApplicationsEventListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notifications/RegisteredUsersEventListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
         </state>
       </provider>
     </entry>
