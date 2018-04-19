@@ -38,6 +38,7 @@ Route::post('/message/receiveduser', 'MessageProcessorController@registerReceive
 
 
 //Subscribers API
+Route::post('/subscribers/{userid}/token', 'SubscriberController@updateSubscriberToken');
 Route::get('/subscribers', 'SubscriberController@retrieveUserWithTheirContacts');
 Route::get('/subscribers/{userid}/subscriptions', 'SubscriberController@retrieveSubscriptionsForUser');
 Route::get('/subscribers/{userid}/not-subscribed-to-notifications', 'SubscriberController@retrieveAllNotificationUserHasNotSubscribedTo');

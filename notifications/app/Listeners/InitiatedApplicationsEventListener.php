@@ -27,7 +27,7 @@
             die('Curl request failed: '.curl_error($ch));
         }else{
 
-            echo " [x] I received --------------------", $result, "\n";
+            echo " [x] I received this --------------------", $result, "\n";
 
         }
 

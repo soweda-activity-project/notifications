@@ -14,7 +14,8 @@ class SubscriptionController extends Controller
         $subscriptionJsonBody = file_get_contents('php://input');
         $subscriptionArray =  json_decode($subscriptionJsonBody, true);
 
-        $subscription = new Subscription(Uuid::generate()->string, $subscriptionArray['notificationname'], $subscriptionArray['userid'],$subscriptionArray['usertype'], $subscriptionArray['contact'],  $subscriptionArray['notificationchannel']);
+        $subscription = new Subscription(Uuid::generate()->string, $subscriptionArray['notificationname'],
+            $subscriptionArray['userid'],$subscriptionArray['usertype'], $subscriptionArray['contact'],  $subscriptionArray['notificationchannel']);
 
         $subscription->save();
 
