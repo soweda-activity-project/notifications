@@ -17,9 +17,9 @@ class NotificationController extends Controller
 
 
         $notification = new Notification(Uuid::generate()->string, $notificationArray['notificationtype'], $notificationArray['notificationname'],
-            $notificationArray['externalemailtemplate'], $notificationArray['externalsmstemplate'],  $notificationArray['externalpushtemplate'],
+            $notificationArray['title'], $notificationArray['externalemailtemplate'], $notificationArray['externalsmstemplate'],  $notificationArray['externalpushtemplate'],
             $notificationArray['internalemailtemplate'], $notificationArray['internalpushtemplate'], $notificationArray['internalpushtemplate'],
-            $notificationArray['messagecontent']);
+            $notificationArray['internalmessagecontent'], $notificationArray['externalmessagecontent']);
 
 
          $notification->save();

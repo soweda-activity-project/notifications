@@ -23,34 +23,14 @@ class MessageProcessorController extends Controller
        $notification = Notification::where('notificationname', '=', $eventName)->get()[0];
 
 
-       //return $notification;
-
-
        $counter = count($repInfos);
 
+       //Supporting variables
 
-       for($i=0; $i < $counter; $i++){
+       $url = 'https://fcm.googleapis.com/fcm/send';
 
-           //Creation des utilisateurs et souscriptions
-
-           $aUser = new Subscriber(Uuid::generate()->string, $repInfos[$i]['fullName'], $repInfos[$i]['email'], $repInfos[$i]['phone'], 'EXTERNAL', '');
-           $aUserSubscription = new Subscription(Uuid::generate()->string, $notification->notificationname, $aUser->userid, $aUser->type, $aUser->emailaddress,'PUSH');
-
-           //Persistance
-
-           $aUser->save();
-           $aUserSubscription->save();
-       }
-
-
-
-       ////Notification
-
-       $allSubscription = Subscription::where('notificationname', '=', $notification->notificationname)->get();
-
-
-       //return $allSubscription;
-
+       $applicationRequestRepsToCreate = [];
+       $subscriptionsForapplicationRequestToCreate = [];
 
        $externalMails = [];
        $internalMails = [];
@@ -63,13 +43,35 @@ class MessageProcessorController extends Controller
 
 
 
-       for($i=0; $i < count($allSubscription); $i++){
-           if( $allSubscription[$i]->notificationchannel === 'EMAIL'){
+       //To be removed at the boundaries
+       for($i=0; $i < $counter; $i++){
 
-               if($allSubscription[$i]->usertype === 'INTERNAL'){
-                   array_push($internalMails, $allSubscription[$i]-> contact);
-               }elseif ($allSubscription[$i]->usertype === 'EXTERNAL'){
-                   array_push($externalMails, $allSubscription[$i]-> contact);
+           //Creation des utilisateurs et souscriptions
+
+           $aUser = new Subscriber(Uuid::generate()->string, $repInfos[$i]['fullName'], $repInfos[$i]['email'], $repInfos[$i]['phone'], 'EXTERNAL', '');
+           array_push($applicationRequestRepsToCreate, $aUser);
+
+           $aUserSubscription = new Subscription(Uuid::generate()->string, $notification->notificationname, $aUser->userid, $aUser->type, $aUser->emailaddress,'PUSH');
+           array_push($subscriptionsForapplicationRequestToCreate, $aUserSubscription);
+
+
+           //Persistance
+
+       }
+
+
+       ////Notification
+       $allSubscriptions = Subscription::where('notificationname', '=', $notification->notificationname)->get();
+
+
+       //return $allSubscription;
+       for($i=0; $i < count($allSubscriptions); $i++){
+           if( $allSubscriptions[$i]->notificationchannel === 'EMAIL'){
+
+               if($allSubscriptions[$i]->usertype === 'INTERNAL'){
+                   array_push($internalMails, $allSubscriptions[$i]-> contact);
+               }elseif ($allSubscriptions[$i]->usertype === 'EXTERNAL'){
+                   array_push($externalMails, $allSubscriptions[$i]-> contact);
 
                }
                else{
@@ -77,24 +79,24 @@ class MessageProcessorController extends Controller
                }
 
 
-           }elseif ($allSubscription[$i]->notificationchannel === 'SMS'){
+           }elseif ($allSubscriptions[$i]->notificationchannel === 'SMS'){
 
-               if($allSubscription[$i]->usertype === 'INTERNAL'){
-                   array_push($internalSms, $allSubscription[$i]-> contact);
+               if($allSubscriptions[$i]->usertype === 'INTERNAL'){
+                   array_push($internalSms, $allSubscriptions[$i]-> contact);
 
-               }elseif ($allSubscription[$i]->usertype === 'EXTERNAL'){
-                   array_push($externalSms, $allSubscription[$i]-> contact);
+               }elseif ($allSubscriptions[$i]->usertype === 'EXTERNAL'){
+                   array_push($externalSms, $allSubscriptions[$i]-> contact);
 
                }else{
 
                }
-           }elseif ($allSubscription[$i]->notificationchannel === 'PUSH'){
+           }elseif ($allSubscriptions[$i]->notificationchannel === 'PUSH'){
 
-               if($allSubscription[$i]->usertype === 'INTERNAL'){
-                   array_push($internalPush, $allSubscription[$i]-> contact);
+               if($allSubscriptions[$i]->usertype === 'INTERNAL'){
+                   array_push($internalPush, $allSubscriptions[$i]-> contact);
 
-               }elseif ($allSubscription[$i]->usertype === 'EXTERNAL'){
-                   array_push($externalPush, $allSubscription[$i]-> contact);
+               }elseif ($allSubscriptions[$i]->usertype === 'EXTERNAL'){
+                   array_push($externalPush, $allSubscriptions[$i]-> contact);
 
                }
                else{
@@ -107,43 +109,76 @@ class MessageProcessorController extends Controller
        }
 
 
-       //Send emails
+       //Persist representatives and their subscriptions
+       for ($i = 0; $i < $counter; $i++){
+            $applicationRequestRepsToCreate[$i]->save();
+            $subscriptionsForapplicationRequestToCreate[$i]->save();
+        }
 
+       //Send emails notifications
        Mail::to($internalMails)->send(new MailNotificator($eventName, $notification->internalemailtemplate));
        Mail::to($externalMails)->send(new MailNotificator($eventName, $notification->externalemailtemplate));
 
-       //Send push
+       //Send push notifications
+       if(count($internalPush) > 0){
+           $data = array();
+           $data['notification_title'] = $notification->title;
+           $data['message'] = array('message'=>$notification->internalmessagecontent);
+           $fields = array(
+               'registration_ids' => $internalPush,
+               'priority' => "high",
+               'data' => compact('data'),
+           );
 
-
-       $url = 'https://fcm.googleapis.com/fcm/send';
-       $data = array();
-       $data['notification_title'] = "Actualités / News:";
-       $data['message'] = array('message'=>'Hello test!');
-       $fields = array(
-           'registration_ids' =>  ['fYZbfUrDQ2Q:APA91bHoOv9Up8GB4nznIB4pYcrxredsKU220C3lnb0t6t7dcRcqt1nhhlbn3JS_dlOSkiz4TXctIiQb_wcNzE4NlOMjSItLd7wzvU2pNLmVn59VqmgZpCbiP5g2bAqKGXMwEPGt2lGi',
-                                           'cBp0BQEFBOI:APA91bFwNjJIa5hQVr8X7Tp6K-C5_levlxs4TIsOirGnXgfd75FpQjYGp9o5ZiKw95Y9EWqIurHP7rXblYfhuhzJGDDPRIHPqz0lTKLFkeH2osdHeQEE4mdPhxmL125wj4s47Q2jjCtU' ],
-           'priority' => "high",
-           'data' => compact('data'),
-       );
-
-       $headers = array(
-           'Authorization:key =AAAAWAJ5b9Y:APA91bG7Niyy-qAXnGip7KOwgJFCnwV1ULiljonFDf1suX8aHp5Frip6kZM19fIF6ha2ryLB_ARFfbAWvSuwcicfdFj6S2i6tTwlsQyRLqC3HvUCqOlysncrPnp3KxDQQ8oB4LgODXFu',
-           'Content-Type: application/json'
-       );
-       $ch = curl_init();
-       curl_setopt($ch, CURLOPT_URL, $url);
-       curl_setopt($ch, CURLOPT_POST, true);
-       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
-       $result = curl_exec($ch);
-       if ($result === FALSE) {
-           die('Curl failed: ' . curl_error($ch));
+           $headers = array(
+               'Authorization:key =AAAAWAJ5b9Y:APA91bG7Niyy-qAXnGip7KOwgJFCnwV1ULiljonFDf1suX8aHp5Frip6kZM19fIF6ha2ryLB_ARFfbAWvSuwcicfdFj6S2i6tTwlsQyRLqC3HvUCqOlysncrPnp3KxDQQ8oB4LgODXFu',
+               'Content-Type: application/json'
+           );
+           $ch = curl_init();
+           curl_setopt($ch, CURLOPT_URL, $url);
+           curl_setopt($ch, CURLOPT_POST, true);
+           curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+           curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+           curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+           $result = curl_exec($ch);
+           if ($result === FALSE) {
+               die('Curl failed: ' . curl_error($ch));
+           }
+           curl_close($ch);
        }
-       curl_close($ch);
+       if(count($externalPush) > 0){
 
+           $data = array();
+           $data['notification_title'] = $notification->title;
+           $data['message'] = array('message'=>$notification->externalmessagecontent);
+           $fields = array(
+               'registration_ids' => $externalPush,
+               'priority' => "high",
+               'data' => compact('data'),
+           );
+
+           $headers = array(
+               'Authorization:key =AAAAWAJ5b9Y:APA91bG7Niyy-qAXnGip7KOwgJFCnwV1ULiljonFDf1suX8aHp5Frip6kZM19fIF6ha2ryLB_ARFfbAWvSuwcicfdFj6S2i6tTwlsQyRLqC3HvUCqOlysncrPnp3KxDQQ8oB4LgODXFu',
+               'Content-Type: application/json'
+           );
+           $ch = curl_init();
+           curl_setopt($ch, CURLOPT_URL, $url);
+           curl_setopt($ch, CURLOPT_POST, true);
+           curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+           curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+           curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+           $result = curl_exec($ch);
+           if ($result === FALSE) {
+               die('Curl failed: ' . curl_error($ch));
+           }
+           curl_close($ch);
+       }
+       //NEED TO HANDLE ERRORS
+       return "OK";
    }
 
 
